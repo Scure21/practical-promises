@@ -103,7 +103,18 @@ function problemC () {
   // });
 
   // promise version (hint: don't need to nest `then` calls)
-  // ???
+  var two = promisifiedReadFile('poem-one/stanza-02.txt');
+  var three = promisifiedReadFile('poem-one/stanza-03.txt');
+
+  Promise.all([two, three])
+  .then(function(data){
+    data.forEach(function(ele){
+      blue(ele);
+    })
+  })
+  .catch(function (err){
+    console.error(err);
+  });
 
 }
 
@@ -122,8 +133,13 @@ function problemD () {
   });
 
   // promise version
-  // ???
-
+  var four = promisifiedReadFile('poem-one/stanza-04.txt')
+  .then(function (data) {
+    blue(data);
+  })
+  .catch(function (err) {
+    magenta(err);
+  })
 }
 
 function problemE () {
