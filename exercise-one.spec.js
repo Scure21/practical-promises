@@ -104,7 +104,7 @@ describe('exercise one (involving poem one)', function () {
 
 	describe('problemE', function () {
 
-		xit('logs the third THEN the fourth stanza; if an error occurs only logs the error and does not continue reading (if there is a file still left to read)', function (done) {
+		it('logs the third THEN the fourth stanza; if an error occurs only logs the error and does not continue reading (if there is a file still left to read)', function (done) {
 			exercise.problemE();
 			setTimeout(function () {
 				var bothSucceeded = (blueCalls.length === 2);
