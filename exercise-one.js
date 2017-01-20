@@ -1,4 +1,5 @@
 'use strict';
+var fs = require('fs');
 
 var Promise = require('bluebird'),
     exerciseUtils = require('./utils');
@@ -26,22 +27,16 @@ args.forEach(function(arg){
 });
 
 function problemA () {
-  /* * * * * * * * * * * * * * * * * * * * * * * * * * * *
-   *
-   * A. log poem one stanza one (ignore errors)
-   *
-   */
-
   // callback version
-  readFile('poem-one/stanza-01.txt', function (err, stanza) {
-    console.log('-- A. callback version --');
-    blue(stanza);
+  fs.readFile('poem-one/stanza-01.txt', function (err, stanza1) {
+    if (err) console.error(err);
+    blue(stanza1);
   });
 
   // promise version
   // ???
-
 }
+//problemA();
 
 function problemB () {
   /* * * * * * * * * * * * * * * * * * * * * * * * * * * *

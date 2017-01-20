@@ -49,7 +49,7 @@ describe('exercise one (involving poem one)', function () {
 
 	describe('problemA', function () {
 
-		xit('logs the first stanza', function (done) {
+		it('logs the first stanza', function (done) {
 			exercise.problemA();
 			setTimeout(function () {
 				expect(blue).to.have.been.called.with(stanzas[0]);
